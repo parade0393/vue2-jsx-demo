@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <van-cell
+      v-for="(item, index) in list"
+      :key="index"
+      is-link
+      :to="item.path"
+      >{{ item.meta.title }}</van-cell
+    >
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
+  computed: {
+    list() {
+      return this.$router.options.routes.filter((el) => el.name != "home");
+    },
   },
 };
 </script>
+<style lang="less" scoped></style>
