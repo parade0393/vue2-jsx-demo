@@ -22,7 +22,7 @@ const routes = [
   {
     path: "/style-jsx",
     name: "styleJsx",
-    component: () => import("@/views/StyleJsx"),
+    component: () => import("@/views/styleJsx/StyleJsx"),
     meta: {
       title: "jsx样式演示",
     },
