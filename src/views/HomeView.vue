@@ -7,19 +7,16 @@
       :to="item.path"
       >{{ item.meta.title }}</van-cell
     >
-    <StyleJsx title="from parent" />
   </div>
 </template>
 
 <script>
-import StyleJsx from "./styleJsx/StyleJsx";
-
 export default {
   name: "HomeView",
-  components: { StyleJsx },
+
   computed: {
     list() {
-      return this.$router.options.routes.filter((el) => el.name != "home");
+      return this.$router.options.routes.filter((el) => !el.meta.hidden);
     },
   },
 };

@@ -9,6 +9,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    meta: {
+      hidden: true,
+    },
   },
   {
     path: "/about",
@@ -20,11 +23,20 @@ const routes = [
     },
   },
   {
+    path: "/parent",
+    name: "parent",
+    component: () => import("@/views/ParentView.vue"),
+    meta: {
+      title: "父组件",
+    },
+  },
+  {
     path: "/style-jsx",
     name: "styleJsx",
     component: () => import("@/views/styleJsx/StyleJsx"),
     meta: {
       title: "jsx样式演示",
+      hidden: true,
     },
   },
 ];

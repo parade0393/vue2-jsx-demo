@@ -11,6 +11,7 @@ export default {
   methods: {
     handleClick(event, id) {
       console.log("handleClick:", event, id);
+      this.$emit("onChange", { id });
     },
   },
   render() {
