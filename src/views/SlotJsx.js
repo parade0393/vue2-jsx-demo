@@ -1,4 +1,6 @@
+import { Field } from "vant";
 export default {
+  components: { [Field.name]: Field },
   data() {
     return {
       list: [
@@ -12,6 +14,7 @@ export default {
         },
       ],
       company: "世界童话公司",
+      value: "",
     };
   },
   render() {
@@ -25,6 +28,7 @@ export default {
             title: company,
           })}
         </footer>
+        <van-field v-model={this.value} placeholder="请输入" />
       </div>
     );
   },
