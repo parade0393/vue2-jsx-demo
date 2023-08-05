@@ -27,7 +27,7 @@ const routes = [
     name: "parent",
     component: () => import("@/views/ParentView.vue"),
     meta: {
-      title: "父组件",
+      title: "父组件演示使用样式和事件",
     },
   },
   {
@@ -37,6 +37,14 @@ const routes = [
     meta: {
       title: "jsx样式演示",
       hidden: true,
+    },
+  },
+  {
+    path: "/list-demo",
+    name: "list-demo",
+    component: () => import("@/views/ListJsx"),
+    meta: {
+      title: "jsx的列表样式",
     },
   },
 ];
