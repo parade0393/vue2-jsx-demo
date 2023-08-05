@@ -1,7 +1,8 @@
 import SlotJsx from "./SlotJsx";
 import { Cell } from "vant";
+import HJsx from "./HJsx";
 export default {
-  components: { SlotJsx, [Cell.name]: Cell },
+  components: { SlotJsx, [Cell.name]: Cell, HJsx },
   render() {
     const scopeSlots = {
       header: ({ list }) => {
@@ -26,6 +27,9 @@ export default {
     return (
       <div>
         <SlotJsx scopedSlots={scopeSlots} />
+        <HJsx level={4}>
+          <div>我是默认插槽的内容</div>
+        </HJsx>
       </div>
     );
   },
