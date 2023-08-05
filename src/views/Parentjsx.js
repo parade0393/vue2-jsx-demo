@@ -1,8 +1,14 @@
 import SlotJsx from "./SlotJsx";
 import { Cell } from "vant";
 import HJsx from "./HJsx";
+import EventJsx from "./EventJsx";
 export default {
   components: { SlotJsx, [Cell.name]: Cell, HJsx },
+  methods: {
+    childHandleClick() {
+      console.log("parentHandleClick--parent");
+    },
+  },
   render() {
     const scopeSlots = {
       header: ({ list }) => {
@@ -27,9 +33,10 @@ export default {
     return (
       <div>
         <SlotJsx scopedSlots={scopeSlots} />
-        <HJsx level={4}>
+        <HJsx level={"4"}>
           <div>我是默认插槽的内容</div>
         </HJsx>
+        <EventJsx click={this.childHandleClick} />
       </div>
     );
   },

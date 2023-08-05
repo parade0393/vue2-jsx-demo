@@ -19,7 +19,7 @@ export default {
     return (
       <div
         class="style-jsx"
-        style={{ color: "#ff0000", backgroundColor: "#eee", height: "100%" }}
+        style={{ color: "#ff0000", backgroundColor: "#eee" }}
       >
         <p onClick={($event) => handleClick($event, 14)} class="title">
           我是Hello World
