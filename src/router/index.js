@@ -44,7 +44,15 @@ const routes = [
     name: "list-demo",
     component: () => import("@/views/ListJsx"),
     meta: {
-      title: "jsx的列表样式",
+      title: "jsx的列表样式,父组件是SFC,子组件是jsx",
+    },
+  },
+  {
+    path: "/slot-demo",
+    name: "slit-demo",
+    component: () => import("@/views/Parentjsx.js"),
+    meta: {
+      title: "插槽,父子组件都是jsx",
     },
   },
 ];
